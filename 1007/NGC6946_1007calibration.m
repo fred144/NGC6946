@@ -186,8 +186,17 @@ ngc6946_ha_calibrated_40 = (ngc6946_ha_raw_40 - (t_science/t_dark)*master_dark -
 close all
 figure(1)
 colormap(gray(256));
-imagesc(rot90(ngc6946_JCB_calibrated_40), [0,1100]); colorbar();
+imagesc(rot90(ngc6946_ha_raw_40), [1000,1200]); colorbar();
 
 figure(2)
 colormap(gray(256));
+imagesc(rot90(ngc6946_jcb_raw_40), [1000,1500]); colorbar();
+
+
+figure(3)
+colormap(gray(256));
 imagesc(rot90(ngc6946_ha_calibrated_40), [0,500]); colorbar();
+
+figure(4)
+colormap(gray(256));
+imagesc(rot90(ngc6946_JCB_calibrated_40), [0,1000]); colorbar();
