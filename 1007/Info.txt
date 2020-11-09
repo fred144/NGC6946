@@ -1,2 +1,3 @@
 When run, this folder outputs all of the calibrated science frames for the the 10/07 Observing night.
 These have yet to be co-added. 
+Make sure that this is in the same folder as the 10/07 files only. 
