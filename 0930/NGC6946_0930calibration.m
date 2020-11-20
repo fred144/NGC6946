@@ -17,22 +17,24 @@ ngc6946_jcb_raw_03 = rfits('NGC6946-003-jcb.fit');ngc6946_jcb_raw_03 = ngc6946_j
 ngc6946_jcb_raw_04 = rfits('NGC6946-004-jcb.fit');ngc6946_jcb_raw_04 = ngc6946_jcb_raw_04.data;
 ngc6946_jcb_raw_05 = rfits('NGC6946-005-jcb.fit');ngc6946_jcb_raw_05 = ngc6946_jcb_raw_05.data;
 %meridian flipped 
-ngc6946_jcb_raw_06 = rfits('NGC6946b-001-jcb.fit');ngc6946_jcb_raw_06 = flipud(fliplr(ngc6946_jcb_raw_06.data)); 
-ngc6946_jcb_raw_07 = rfits('NGC6946b-002-jcb.fit');ngc6946_jcb_raw_07 = flipud(fliplr(ngc6946_jcb_raw_07.data));
-ngc6946_jcb_raw_08 = rfits('NGC6946b-003-jcb.fit');ngc6946_jcb_raw_08 = flipud(fliplr(ngc6946_jcb_raw_08.data));
-ngc6946_jcb_raw_09 = rfits('NGC6946b-004-jcb.fit');ngc6946_jcb_raw_09 = flipud(fliplr(ngc6946_jcb_raw_09.data));
-ngc6946_jcb_raw_10 = rfits('NGC6946b-005-jcb.fit');ngc6946_jcb_raw_10 = flipud(fliplr(ngc6946_jcb_raw_10.data));
+ngc6946_jcb_raw_06 = rfits('NGC6946b-001-jcb.fit');ngc6946_jcb_raw_06 = ngc6946_jcb_raw_06.data; 
+ngc6946_jcb_raw_07 = rfits('NGC6946b-002-jcb.fit');ngc6946_jcb_raw_07 = ngc6946_jcb_raw_07.data;
+ngc6946_jcb_raw_08 = rfits('NGC6946b-003-jcb.fit');ngc6946_jcb_raw_08 = ngc6946_jcb_raw_08.data;
+ngc6946_jcb_raw_09 = rfits('NGC6946b-004-jcb.fit');ngc6946_jcb_raw_09 = ngc6946_jcb_raw_09.data;
+ngc6946_jcb_raw_10 = rfits('NGC6946b-005-jcb.fit');ngc6946_jcb_raw_10 = ngc6946_jcb_raw_10.data;
 
 ngc6946_JCB_calibrated_01 = (ngc6946_jcb_raw_01 - (t_science/t_dark)*master_dark - master_bias) ./ normalized_master_flat_jcb;
 ngc6946_JCB_calibrated_02 = (ngc6946_jcb_raw_02 - (t_science/t_dark)*master_dark - master_bias) ./ normalized_master_flat_jcb;
 ngc6946_JCB_calibrated_03 = (ngc6946_jcb_raw_03 - (t_science/t_dark)*master_dark - master_bias) ./ normalized_master_flat_jcb;
 ngc6946_JCB_calibrated_04 = (ngc6946_jcb_raw_04 - (t_science/t_dark)*master_dark - master_bias) ./ normalized_master_flat_jcb;
 ngc6946_JCB_calibrated_05 = (ngc6946_jcb_raw_05 - (t_science/t_dark)*master_dark - master_bias) ./ normalized_master_flat_jcb;
-ngc6946_JCB_calibrated_06 = (ngc6946_jcb_raw_06 - (t_science/t_dark)*master_dark - master_bias) ./ normalized_master_flat_jcb;
-ngc6946_JCB_calibrated_07 = (ngc6946_jcb_raw_07 - (t_science/t_dark)*master_dark - master_bias) ./ normalized_master_flat_jcb;
-ngc6946_JCB_calibrated_08 = (ngc6946_jcb_raw_08 - (t_science/t_dark)*master_dark - master_bias) ./ normalized_master_flat_jcb;
-ngc6946_JCB_calibrated_09 = (ngc6946_jcb_raw_09 - (t_science/t_dark)*master_dark - master_bias) ./ normalized_master_flat_jcb;
-ngc6946_JCB_calibrated_10 = (ngc6946_jcb_raw_10 - (t_science/t_dark)*master_dark - master_bias) ./ normalized_master_flat_jcb;
+
+
+ngc6946_JCB_calibrated_06 = rot90((ngc6946_jcb_raw_06 - (t_science/t_dark)*master_dark - master_bias) ./ normalized_master_flat_jcb, 2);
+ngc6946_JCB_calibrated_07 = rot90((ngc6946_jcb_raw_07 - (t_science/t_dark)*master_dark - master_bias) ./ normalized_master_flat_jcb, 2);
+ngc6946_JCB_calibrated_08 = rot90((ngc6946_jcb_raw_08 - (t_science/t_dark)*master_dark - master_bias) ./ normalized_master_flat_jcb, 2);
+ngc6946_JCB_calibrated_09 = rot90((ngc6946_jcb_raw_09 - (t_science/t_dark)*master_dark - master_bias) ./ normalized_master_flat_jcb, 2);
+ngc6946_JCB_calibrated_10 = rot90((ngc6946_jcb_raw_10 - (t_science/t_dark)*master_dark - master_bias) ./ normalized_master_flat_jcb, 2);
 
 
 %%
@@ -47,11 +49,11 @@ ngc6946_ha_raw_03 = rfits('NGC6946-003-ha.fit');ngc6946_ha_raw_03 = ngc6946_ha_r
 ngc6946_ha_raw_04 = rfits('NGC6946-004-ha.fit');ngc6946_ha_raw_04 = ngc6946_ha_raw_04.data;
 ngc6946_ha_raw_05 = rfits('NGC6946-005-ha.fit');ngc6946_ha_raw_05 = ngc6946_ha_raw_05.data;
 %meridian flipped 
-ngc6946_ha_raw_06 = rfits('NGC6946b-001-ha.fit');ngc6946_ha_raw_06 = flipud(fliplr(ngc6946_ha_raw_06.data)); 
-ngc6946_ha_raw_07 = rfits('NGC6946b-002-ha.fit');ngc6946_ha_raw_07 = flipud(fliplr(ngc6946_ha_raw_07.data));
-ngc6946_ha_raw_08 = rfits('NGC6946b-003-ha.fit');ngc6946_ha_raw_08 = flipud(fliplr(ngc6946_ha_raw_08.data));
-ngc6946_ha_raw_09 = rfits('NGC6946b-004-ha.fit');ngc6946_ha_raw_09 = flipud(fliplr(ngc6946_ha_raw_09.data));
-ngc6946_ha_raw_10 = rfits('NGC6946b-005-ha.fit');ngc6946_ha_raw_10 = flipud(fliplr(ngc6946_ha_raw_10.data));
+ngc6946_ha_raw_06 = rfits('NGC6946b-001-ha.fit');ngc6946_ha_raw_06 = ngc6946_ha_raw_06.data; 
+ngc6946_ha_raw_07 = rfits('NGC6946b-002-ha.fit');ngc6946_ha_raw_07 = ngc6946_ha_raw_07.data;
+ngc6946_ha_raw_08 = rfits('NGC6946b-003-ha.fit');ngc6946_ha_raw_08 = ngc6946_ha_raw_08.data;
+ngc6946_ha_raw_09 = rfits('NGC6946b-004-ha.fit');ngc6946_ha_raw_09 = ngc6946_ha_raw_09.data;
+ngc6946_ha_raw_10 = rfits('NGC6946b-005-ha.fit');ngc6946_ha_raw_10 = ngc6946_ha_raw_10.data;
 
 
 ngc6946_ha_calibrated_01 = (ngc6946_ha_raw_01 - (t_science/t_dark)*master_dark - master_bias) ./ normalized_master_flat_ha;
@@ -59,11 +61,13 @@ ngc6946_ha_calibrated_02 = (ngc6946_ha_raw_02 - (t_science/t_dark)*master_dark -
 ngc6946_ha_calibrated_03 = (ngc6946_ha_raw_03 - (t_science/t_dark)*master_dark - master_bias) ./ normalized_master_flat_ha;
 ngc6946_ha_calibrated_04 = (ngc6946_ha_raw_04 - (t_science/t_dark)*master_dark - master_bias) ./ normalized_master_flat_ha;
 ngc6946_ha_calibrated_05 = (ngc6946_ha_raw_05 - (t_science/t_dark)*master_dark - master_bias) ./ normalized_master_flat_ha;
-ngc6946_ha_calibrated_06 = (ngc6946_ha_raw_06 - (t_science/t_dark)*master_dark - master_bias) ./ normalized_master_flat_ha;
-ngc6946_ha_calibrated_07 = (ngc6946_ha_raw_07 - (t_science/t_dark)*master_dark - master_bias) ./ normalized_master_flat_ha;
-ngc6946_ha_calibrated_08 = (ngc6946_ha_raw_08 - (t_science/t_dark)*master_dark - master_bias) ./ normalized_master_flat_ha;
-ngc6946_ha_calibrated_09 = (ngc6946_ha_raw_09 - (t_science/t_dark)*master_dark - master_bias) ./ normalized_master_flat_ha;
-ngc6946_ha_calibrated_10 = (ngc6946_ha_raw_10 - (t_science/t_dark)*master_dark - master_bias) ./ normalized_master_flat_ha;
+
+
+ngc6946_ha_calibrated_06 = rot90((ngc6946_ha_raw_06 - (t_science/t_dark)*master_dark - master_bias) ./ normalized_master_flat_ha, 2);
+ngc6946_ha_calibrated_07 = rot90((ngc6946_ha_raw_07 - (t_science/t_dark)*master_dark - master_bias) ./ normalized_master_flat_ha, 2);
+ngc6946_ha_calibrated_08 = rot90((ngc6946_ha_raw_08 - (t_science/t_dark)*master_dark - master_bias) ./ normalized_master_flat_ha, 2);
+ngc6946_ha_calibrated_09 = rot90((ngc6946_ha_raw_09 - (t_science/t_dark)*master_dark - master_bias) ./ normalized_master_flat_ha, 2);
+ngc6946_ha_calibrated_10 = rot90((ngc6946_ha_raw_10 - (t_science/t_dark)*master_dark - master_bias) ./ normalized_master_flat_ha, 2);
 
 %%
 close all
@@ -83,3 +87,27 @@ imagesc(rot90(ngc6946_ha_calibrated_10), [0,500]); colorbar();
 figure(4)
 colormap(gray(256));
 imagesc(rot90(ngc6946_JCB_calibrated_10), [500,1700]); colorbar();
+
+%%
+wfits(ngc6946_JCB_calibrated_01, '0930-calibrated-jcb-1.fit')
+wfits(ngc6946_JCB_calibrated_02, '0930-calibrated-jcb-2.fit')
+wfits(ngc6946_JCB_calibrated_03, '0930-calibrated-jcb-3.fit')
+wfits(ngc6946_JCB_calibrated_04, '0930-calibrated-jcb-4.fit')
+wfits(ngc6946_JCB_calibrated_05, '0930-calibrated-jcb-5.fit')
+wfits(ngc6946_JCB_calibrated_06, '0930-calibrated-jcb-6.fit')
+wfits(ngc6946_JCB_calibrated_07, '0930-calibrated-jcb-7.fit')
+wfits(ngc6946_JCB_calibrated_08, '0930-calibrated-jcb-8.fit')
+wfits(ngc6946_JCB_calibrated_09, '0930-calibrated-jcb-9.fit')
+wfits(ngc6946_JCB_calibrated_10, '0930-calibrated-jcb-10.fit')
+ 
+ 
+wfits(ngc6946_ha_calibrated_01, '0930-calibrated-ha-1.fit')
+wfits(ngc6946_ha_calibrated_02, '0930-calibrated-ha-2.fit')
+wfits(ngc6946_ha_calibrated_03, '0930-calibrated-ha-3.fit')
+wfits(ngc6946_ha_calibrated_04, '0930-calibrated-ha-4.fit')
+wfits(ngc6946_ha_calibrated_05, '0930-calibrated-ha-5.fit')
+wfits(ngc6946_ha_calibrated_06, '0930-calibrated-ha-6.fit')
+wfits(ngc6946_ha_calibrated_07, '0930-calibrated-ha-7.fit')
+wfits(ngc6946_ha_calibrated_08, '0930-calibrated-ha-8.fit')
+wfits(ngc6946_ha_calibrated_09, '0930-calibrated-ha-9.fit')
+wfits(ngc6946_ha_calibrated_10, '0930-calibrated-ha-10.fit')
