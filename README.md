@@ -1,4 +1,4 @@
-# NGC6946
+# NGC6946 Analysis Through Ha and JC-B
 This Repo is for Project 1 of ASTR 310 conducted in Fall 2020.
 
 Each folder contains a readme describing the contents.
